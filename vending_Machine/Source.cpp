@@ -5,6 +5,12 @@ string myMenu(void);
 bool onNOff();
 int myMoney();
 
+int coke[];
+int doritos[];
+int snickers[];
+int chexMix[];
+int pepsi[];
+
 int main() {
 	bool vendingMachine = onNOff();
 	
@@ -13,7 +19,7 @@ int main() {
 }
 
 bool onNOff(void) {
-	bool systemON = true;
+	bool systemON;
 	int power;
 
 	start2:
