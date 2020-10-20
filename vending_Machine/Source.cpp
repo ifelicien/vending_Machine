@@ -1,44 +1,49 @@
 #include <iostream>
+#include <string>
 using namespace std;
 
 string myMenu(void);
-bool onNOff();
+bool powerSwitch();
 int myMoney();
 
-int coke[];
-int doritos[];
-int snickers[];
-int chexMix[];
-int pepsi[];
+bool power = false;
+
+class Snack {
+	public:	
+		int inventory = 30;
+		string name;
+		double price;
+
+	Snack(string n, double p) {
+		name = p;
+		price = p;
+	}
+		
+	string  printself() {
+		cout << inventory << ":" << name << " " << price << endl;
+	}
+
+};
 
 int main() {
-	bool vendingMachine = onNOff();
-	
+	Snack Coke("Coke", 0.95);
+	Snack Doritos("Doritos", 0.75);
+	Snack Snickers("Snickers", 0.55);
+	Snack ChexMix("Chex Mix", 0.60);
+	Snack Pepsi("Pepsi", 0.90);
 
-	cout << vendingMachine << endl;
 }
 
-bool onNOff(void) {
-	bool systemON;
-	int power;
+int turnPowerOn() {
 
-	start2:
+	!power ? powerSwitch() : power;  // if no power use powerSwitch function to turn power on
+}
 
-	cout << "do you want to turn the system on? " << endl;
-	cout << "Press 1 for ON and 2 for Off: ";
-	cin >> power;
+bool powerSwitch(void) {
 
-	if (power == 1) {
-		cout << "powering sytem on: ";
-		return true;
-	}
-	else if (power == 2){
-		cout << "System is not powered on: ";
-		return false;
-	}
-	else {
-		goto start2;
-	}
+	cout << "flipping the power switch. ";
+
+	power = !power;
 
 }
 
@@ -56,6 +61,7 @@ string myMenu(void) {
 	switch (myInput) {
 
 		case 1: mySnack = "Coke";
+			price = 0.95;
 			return mySnack;
 			break;
 		case 2: mySnack = "Doritos";
