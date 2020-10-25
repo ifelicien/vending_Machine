@@ -5,6 +5,7 @@ using namespace std;
 string myMenu(void);
 bool powerSwitch();
 int myMoney();
+int payment(int);
 
 bool power = false;
 
@@ -80,4 +81,34 @@ string myMenu(void) {
 			cout << "Please make a valid selection ";
 			goto start;	
 	}
+}
+
+
+int payment(int price) {
+	int pay;
+
+	string dispense = (pay >= price) ? "dispensing item " : "Insert correct amount";
+
+	return 0;
+}
+
+double laborCost(int price) {
+	
+	int labor = price * 0.25;
+
+	return labor;
+}
+
+double overhead(int price) {
+
+	double overH = price * 0.05;
+
+	return overH;
+}
+
+double myProfit(int price) {
+	
+	int profit = price * (.35 + .05);
+
+	return profit;
 }
