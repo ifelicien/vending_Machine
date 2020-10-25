@@ -6,13 +6,14 @@ string myMenu(void);
 bool powerSwitch();
 int myMoney();
 int payment(int);
-int itemRefill();
+int item_Refill();
+int coins_container();
+int item_Container();
+int coin_Return();
 double laborCost(int);
 double overhead(int);
-double myProfit(int price);
-double coinRefill();
-
-
+double profit_(int price);
+double coin_Refill();
 
 bool power = false;
 
@@ -21,16 +22,13 @@ class Snack {
 		int inventory = 30;
 		string name;
 		double price;
-
 	Snack(string n, double p) {
 		name = p;
 		price = p;
 	}
-		
 	string  printself() {
 		cout << inventory << ":" << name << " " << price << endl;
 	}
-
 };
 
 int main() {
@@ -39,20 +37,15 @@ int main() {
 	Snack Snickers("Snickers", 0.55);
 	Snack ChexMix("Chex Mix", 0.60);
 	Snack Pepsi("Pepsi", 0.90);
-
 }
 
 int turnPowerOn() {
-
 	!power ? powerSwitch() : power;  // if no power use powerSwitch function to turn power on
 }
 
 bool powerSwitch(void) {
-
 	cout << "flipping the power switch. ";
-
 	power = !power;
-
 }
 
 string myMenu(void) {
@@ -61,7 +54,6 @@ string myMenu(void) {
 	string mySnack;
 
 	start:
-
 	cout << "Select item: " << endl;
 	cout << "1. Coke \t $0.95\n2. Doritos \t 0.75\n3. Snickers \t $0.55\n4. Chex Mix \t $0.60\n5. Pepsi \t $0.90" << endl;
 	cin >> myInput;
@@ -95,28 +87,21 @@ int payment(int price) {
 	int pay;
 
 	string dispense = (pay >= price) ? "dispensing item " : "Insert correct amount";
-
 	return 0;
 }
 
 double laborCost(int price) {
-	
 	int labor = price * 0.25;
-
 	return labor;
 }
 
 double overhead(int price) {
-
 	double overH = price * 0.05;
-
 	return overH;
 }
 
-double myProfit(int price) {
-	
+double profit_(int price) {
 	int profit = price * (.35 + .05);
-
 	return profit;
 }
 
@@ -126,5 +111,8 @@ double coinRefill() {
 
 int itemRefill() {
 
+}
+
+int coin_Return() {
 
 }
