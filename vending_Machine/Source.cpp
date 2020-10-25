@@ -6,6 +6,13 @@ string myMenu(void);
 bool powerSwitch();
 int myMoney();
 int payment(int);
+int itemRefill();
+double laborCost(int);
+double overhead(int);
+double myProfit(int price);
+double coinRefill();
+
+
 
 bool power = false;
 
@@ -111,4 +118,13 @@ double myProfit(int price) {
 	int profit = price * (.35 + .05);
 
 	return profit;
+}
+
+double coinRefill() {
+
+}
+
+int itemRefill() {
+
+
 }
